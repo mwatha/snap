@@ -1,0 +1,19 @@
+<style>
+#new_user
+  {
+    font-size:12px;
+  }
+</style>
+<div id='new_user'>
+<u><b>New user</b></u></br>
+<% form_tag :controller =>"user" ,:action => "create" do %>
+<table class="form_table">
+<tr><td>User name:</td><td><%= text_field 'user','username',:value => @username %></td><tr>
+<tr><td>First name:</td><td><%= text_field 'user','first_name',:value => @first_name %></td></tr>
+<tr><td>Last name:</td><td><%= text_field 'user','last_name' ,:value => @last_name %></td></tr>
+<tr><td>Password:</td><td><%= password_field 'user','password' %></td></tr>
+<tr><td>Confirm password:</td><td><%= password_field 'confirmpassword', nil %></td></table></tr></br>
+<%= submit_tag value="Create"%>
+<% end %>
+</div>
+

@@ -1,0 +1,49 @@
+<html>
+<head>
+<%= stylesheet_link_tag "home" %>
+<%= javascript_include_tag "prototype" %>
+<script>
+  function updateMe() {
+    myUrl = "/user/contents/" + $('article').value;
+    console.log(myUrl);
+    //new Ajax.Updater('content_', myUrl, {asynchronous:true, evalScripts:true});
+    var myAjax = new Ajax.Updater('content_',myUrl,{method: 'get',});
+  }
+</script>
+<style>
+  #center{height:460px;}
+</style>
+<title>G&A international</title>
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" id="page_body">
+  <div id="title"></div></div>
+  <div id="login"><%= "Login as " + @user.username + " |" unless @user.blank? %><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %><%= link_to "Login |",:controller =>"user",:action=>"login" if @user.blank?%> <%= link_to "Logout",:controller =>"user",:action=>"logout" %></div>
+  <div id="data_div">
+    <div align="left" id="left">
+    <table>
+    <tr><td><%= link_to 'Home',:controller =>'article' ,:action =>'index'%></td></tr>
+    <tr><td><%= link_to_remote( "Create user",:update => "center",:url =>{ :action => :forms,:id => 'new_user' }) %></td></tr>
+    <tr><td><%= link_to_remote( "Edit user",:update => "center",:url =>{ :action => :forms,:id => 'edit_user' }) %></td></tr>
+    <tr><td><%= link_to_remote( "New article",:update => "center",:url =>{ :action => :forms,:id => 'new_article' }) %></td></tr>
+    <tr><td><%= link_to_remote( "Edit article",:update => "center",:url =>{ :action => :forms,:id => 'edit_article' }) %></td></tr>
+    <tr><td><%= link_to_remote( "Upload pictures",:update => "center",:url =>{ :action => :forms,:id => 'upload' }) %></td></tr>
+    <tr><td><%= link_to 'Upload video',nil ,:controller=>'' ,:action=>''%></td></tr>
+    </table>
+    </div>
+    <div id="page_update">Site last updated at: <%=Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
+    <div id="center">
+     <%= render :partial => @html_form %> 
+    </div>
+  </div>
+   <div id="about">
+     <table id="footer">
+       <tr><td>
+       <p align="center" style="margin-top: 2px; margin-bottom: 2px;">
+       <font face="Arial" color="" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :g.a.studio@liberty.mw<%='&nbsp;'*3%>g.a@yahoo.com</font>
+       </p>
+       </td></tr>
+     </table>
+   </div>
+</body>
+</html>
+

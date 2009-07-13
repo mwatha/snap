@@ -1,0 +1,56 @@
+  #photo_count 
+  {
+    color:blue;
+    font-size:11px;
+    font-weight:normal;
+  }
+
+  #single_photo_header h2
+  { 
+    font-size:14px;
+    padding:0 0 6px;
+  }
+
+  #single_photo_header
+  {
+    margin-top:15px;
+  }
+
+  #pagerpro_container 
+  {
+    float:right;
+    margin:0 0;
+    padding:3px 0 4px;
+    padding-right:5;
+    position:relative;
+    top:-23px;
+    color:blue;
+    font-size:11px;
+    font-weight:normal;
+ }
+
+  #photoborder
+  {
+    background:#F7F7F7;
+    border-bottom:1px solid #BBBBBB;
+    border-top:1px solid #BBBBBB;
+    padding:0 0 10px;
+    position:relative;
+    text-align:center;
+    display:block;
+  }
+
+  #data_div {height:650px;}
+
+  #photoborder img 
+  {
+    cursor:pointer;
+    background-color:white;
+    border:1px solid #DDDDDD;
+    margin:10px;
+    height:489px;
+    width:685px;
+    background-color:gray;
+  }
+
+

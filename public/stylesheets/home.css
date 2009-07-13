@@ -1,0 +1,219 @@
+  #page_body
+  {
+    background:#EEEEEE none repeat scroll 0 0;
+    border:0 none;
+    font-family:verdana;
+    font-size:62.5%;
+    margin:0;
+    min-width:974px;
+  }
+
+  #title_div
+  {
+    BORDER-RIGHT: black 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: black 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-WEIGHT: bolder;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 2px 10% 0px;
+    TEXT-TRANSFORM: none;
+    BORDER-LEFT: black 1px solid;
+    COLOR: black;
+    PADDING-TOP: 30px;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: black;
+
+  }
+
+  #title
+  {
+    PADDING-RIGHT: 2px;
+    PADDING-LEFT: 2px;
+    PADDING-BOTTOM: 90px;
+    MARGIN: 2px 10% 3px;
+    PADDING-TOP: 30px;
+    BACKGROUND:transparent url(..//public/images/alex2.jpg);
+
+
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-topright:5px;
+    background-repeat:repeat-y;
+    margin:0 auto;
+    width:1000px;
+
+  }
+ 
+  #center 
+  {/*
+    height:auto;
+    position:absolute;
+    top:166px;
+    margin-left: 175px;
+    margin-right:140px;
+    width:auto;
+    color:#454545;
+    background-color:white;
+    line-height:1.4em;
+    border-left:0px solid;
+    border-right:0px solid;
+    border-top:0px solid;
+    border-bottom:0px solid;
+    background-color:#EFEFEF; */
+    padding-left:248px;
+    line-height:1.5em;
+    font-size:1.3em;
+  }  
+
+  #data_div
+  { /*
+    height:inherit;
+    height:100%;
+    BACKGROUND-COLOR: white;
+    MARGIN: 2px 10% 10px;
+
+    PADDING-RIGHT: 2px;
+    PADDING-TOP: 400px;
+    PADDING-LEFT: 2px;
+
+    BORDER-LEFT: 0px solid;
+    BORDER-BOTTOM: 0px solid;
+    BORDER-RIGHT: 0px solid;
+    BORDER-TOP:  0px solid;
+    none repeat scroll 0% 0%; */
+     
+   -moz-border-radius-topleft:5px;
+   -moz-border-radius-topright:5px;
+   background-color:#FFFFFF;
+   background-repeat:repeat-y;
+   margin:0 auto;
+   padding-bottom:30px;
+   padding-top:10px;
+   position:relative;
+   width:1000px;
+  }
+  
+  #left 
+  {/*
+    background-color:#D8D8D8;
+    position:absolute;
+    top:160px;
+    width:170px;
+    height:auto;
+    overflow:auto; */
+    float:left;
+    left:0;
+    padding:25px;
+    top:0;
+    width:190px;
+  } 
+ 
+  #article_title
+  {
+    color:#F9712E;
+    display:block;
+    font-family:arial;
+    font-size:15px;
+    font-weight:normal;
+    line-height:1.3em;
+    padding:0;
+  }
+  
+  
+#page_update
+  {
+    margin-right: 230px;
+    margin-bottom: 7px;
+    width:auto;
+    height:auto;
+    color:black;
+    font-size:12px;
+    text-decoration:underline;
+  }
+
+  td {
+    background:#666666 none repeat scroll 0 0;
+    text-align:justify;
+  }
+
+  td {
+    width:168px;
+  }
+
+  td a{
+    color:#FFFFFF;
+    font-size:12px;
+    font-weight:normal;
+    text-align:center;
+  }
+
+  #login
+  {
+    color:#191970;
+    margin:2px 10% 3px;
+    padding-right:6px;
+    text-align:right;
+    font-size:11px;
+  }
+
+  #about{
+    BORDER-RIGHT: black 1px solid;
+    PADDING-RIGHT: 2px;
+    PADDING-LEFT: 2px;
+    FONT-WEIGHT: bolder;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 2px 10% 0px;
+    TEXT-TRANSFORM: none;
+    BORDER-LEFT: black 1px solid;
+    COLOR: black;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR:-moz-fieldtext;
+
+    background-repeat:repeat-y;
+    margin:0 auto;
+    width:1000px;
+  }  
+  
+  #about td
+  {
+    BACKGROUND-COLOR:-moz-fieldtext;
+    COLOR:white;
+    text-align:center; 
+    font-size:11px;
+    width:auto;
+  }
+
+  #footer{width:1000px;}
+
+  .form_table td
+   {
+     background-color:white;
+     font-size:12px;
+   }
+
+   #image_code
+   {
+     height:194;
+     width:246;
+     margin-right:10;
+   }
+
+   .imgcontainer 
+   {
+     position:relative;
+     float:right;
+   }
+
+   .caption 
+   {
+     font: normal 1em/1.3em arial;
+     background:#fff;
+     color:#000;
+     position:absolute;
+     bottom:0;
+     left:0;
+     text-align:center;
+     width:100%;
+     opacity:.75;
+     filter:alpha(opacity=85);
+   }

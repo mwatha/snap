@@ -1,0 +1,31 @@
+<style>
+#edit_article
+  {
+    font-size:12px;
+  }
+
+  #content_
+  {
+    border:1px solid black;
+  }
+</style>
+
+<div id='edit_article'>
+<% titles = Array.new()
+ titles << ""
+ Article.find(:all).collect{|a|titles << a.title} %>
+<u><b>Edit article</b></u></br>
+<% form_tag :controller => "article" ,:action => "edit" do %>
+
+<table class="form_table">
+<tr><td>Title:</td><td><%= select_tag(:article, options_for_select(titles),:onchange => "updateMe()") %></td></tr>
+<tr><td>New title:</td><td><%= text_field 'new_title',nil %></td></tr>
+<tr><td>New link title:</td><td><%= text_field 'new_link_title',nil %></td></tr>
+<tr><td>Content:</td><td></td></tr>
+<tr><td></td><td><%= text_area 'content',nil,:size =>13 ,:rows => "20", :cols =>"89"  %></td></tr>
+</table>
+
+<%= submit_tag value="Save"%>
+<% end %>
+</div>
+

@@ -1,0 +1,24 @@
+<style>
+#new_article
+  {
+    font-size:12px;
+  }
+
+#content
+  {
+    border:1px solid black;
+    width:65%;
+  }
+</style>
+<div id='new_article'>
+<u><b>New article</b></u></br>
+<% form_tag :controller =>"article" ,:action => "new" do %>
+<table class="form_table">
+<tr><td>Title:</td><td><%= text_field 'title',nil %></td><tr>
+<tr><td>Link title:</td><td><%= text_field 'link_title',nil %></td><tr>
+<tr><td>Content:</td><td></td></tr>
+<tr><td></td><td><%= text_area 'content',nil,:size =>13 ,:rows => "20", :cols =>"89"  %></td></tr></table></br>
+<%= submit_tag value="Create"%>
+<% end %>
+</div>
+

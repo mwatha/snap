@@ -1,0 +1,23 @@
+<html>
+<head>
+ <%= stylesheet_link_tag "home" %>
+<style>
+  #login_table{}
+</style>
+<title>G&A international</title>
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" id="page_body">
+  <div id="title"></div></div>
+  <div id="login"><%= "Login as " + @user.username + " |" unless @user.blank? %><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %><%= link_to "Login |",:controller =>"user",:action=>"login" if @user.blank?%> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless  @user.blank?%></div>
+  <div id="data_div">
+  <% form_tag do %>
+    <table id="login_table">
+    <tr><td>Username</td><td><%=text_field(:user, :username, :helpText=> "Enter Username", :textCase => "lower",:tt_pageonload=>"loadBarcodePage") %></td></tr>
+    <tr><td>Password</td><td><%=password_field(:user, :password, :helpText => "Enter Password", :textCase => "lower") %></td></tr>
+    </table>
+    <%= submit_tag value="Submit"%>
+  <% end %>
+  </div>
+</body>
+</html>
+

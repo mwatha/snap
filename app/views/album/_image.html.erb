@@ -1,0 +1,5 @@
+<% if @next_image %>
+<%= image_tag("/images/uploads/#{@next_image.album}/#{@next_image.file_name}",:id => "main_image",:alt => @next_image.file_name,:name => @image_count)%>
+<% else %>
+<%= image_tag("/images/uploads/",:id => "main_image") %>
+<% end %>

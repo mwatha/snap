@@ -1,0 +1,74 @@
+<html>
+<head>
+ <%= javascript_include_tag "prototype" %>
+ <%= stylesheet_link_tag "home" %>
+ <%= stylesheet_link_tag "pictures" %>
+<style>
+  #main_image
+  {
+    height:489px;                                                             |
+    width:685px;
+  }
+</style>
+<script>
+   
+  function getPicture(url,album_name){
+    var image_id = $('main_image').alt
+    var image_name = album_name
+    console.log(image_name);
+    console.log(image_id);
+    var url = "/album/"+ url + "/?image_id=" + image_id + "&image_name=" + image_name;
+    var myAjax = new Ajax.Updater('photoborder',url,{method: 'get',}); 
+    
+    setTimeout(getHTML, 500);
+    //setTimeout(getHTML, 1000);
+    //getHTML();
+  }
+
+  function getHTML() {  
+    $('photo_count').innerHTML = $('main_image').name;
+  }  
+  
+
+</script>
+<title>G&A international</title>
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" id="page_body">
+  <div id="title"></div></div>
+  <div id="login"><%= "Login as " + @user.username + " |" unless @user.blank? %><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %><%= link_to "Login |",:controller =>"user",:action=>"login" if @user.blank?%> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless  @user.blank?%></div>
+  <div id="data_div">
+    <div align="left" id="left">
+    <table>
+    <tr><td><%= link_to 'Home',:controller=>'article' ,:action=>'index' ,:id => ""%></td></tr>
+    <% @articles.each{|article| %>
+      <tr><td><%= link_to article.link_title,:controller=>'article' ,:action=>'index',:id => article.id %></td></tr>
+    <%}%>
+    <tr><td><%= link_to 'G&A in pictures',:controller=>'album' ,:action=>'show'%></td></tr>
+    </table>
+    </div>
+    <div id="center">
+    <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
+     
+    <div id="single_photo_header">
+    <h4><%= @album[0].album rescue ''%></h4>
+    <div id="photo_count"><%= @image_count %></div>
+    <div id='pagerpro_container'><%= link_to_function( "Previous",:onclick => "getPicture('previous_picture','#{@album[0].album}');") %>&nbsp; | &nbsp;<%=  link_to_function( "Next",:onclick => "getPicture('next_picture','#{@album[0].album}');") %></div>
+    </div>
+    <div id='photoborder'>
+       <%= render :partial => "image" %>
+    </div>
+         
+    </div>
+  </div>
+  <div id="about">
+  <table id="footer">
+    <tr><td>
+      <p align="center" style="margin-top: 2px; margin-bottom: 2px;">
+      <font face="Arial" color="" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :g.a.studio@liberty.mw<%='&nbsp;'*3%>g.a@yahoo.com</font>
+      </p>
+    </td></tr>
+  </table>
+  </div>
+</body>
+</html>
+

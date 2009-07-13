@@ -1,0 +1,40 @@
+<html>
+<head>
+ <%= stylesheet_link_tag "home" %>
+<style>
+</style>
+<title>G&A international</title>
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" id="page_body">
+  <div id="title"></div></div>
+  <div id="login"><%= "Login as " + @user.username + " |" unless @user.blank? %><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %><%= link_to "Login |",:controller =>"user",:action=>"login" if @user.blank?%> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless  @user.blank?%></div>
+  <div id="data_div">
+    <div align="left" id="left">
+    <table>
+    <tr><td><%= link_to 'Home' ,:controller =>'article' ,:action =>'index' ,:id => ""%></td></tr>
+    <% @articles.each{|article| %>
+      <tr><td><%= link_to article.link_title,:controller =>'article' ,:action =>'index',:id => article.id %></td></tr>
+    <%}%>
+    <tr><td><%= link_to 'G&A in pictures',:controller=>'album' ,:action=>'show'%></td></tr>
+    </table>
+    </div>
+    <div id="center">
+    <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
+         <% unless @article.blank? %>
+           <div id="article_title"><%=@article.title%></div>
+           <%= @article.content %>
+         <%end%>  
+    </div>
+  </div>
+  <div id="about">
+  <table id="footer">
+    <tr><td>
+      <p align="center" style="margin-top: 2px; margin-bottom: 2px;">
+      <font face="Arial" color="" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :g.a.studio@liberty.mw<%='&nbsp;'*3%>g.a@yahoo.com</font>
+      </p>
+    </td></tr>
+  </table>
+  </div>
+</body>
+</html>
+
