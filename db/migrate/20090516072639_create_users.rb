@@ -21,7 +21,7 @@ CREATE TABLE `users` (
   `date_created`Datetime NOT NULL,
   `changed_by` int(11) default NULL,
   `date_changed` Datetime NOT NULL,
-  `voided` tinyint(1) default NULL,
+  `voided` tinyint(1) default 0,
   `voided_by` int(11) default NULL,
   `date_voided` Datetime NULL,
   `void_reason` varchar(255) default NULL,
