@@ -38,6 +38,7 @@
     position:relative;
     text-align:center;
     display:block;
+    height:548px;
   }
 
   #data_div {height:650px;}
@@ -48,8 +49,6 @@
     background-color:white;
     border:1px solid #DDDDDD;
     margin:10px;
-    height:489px;
-    width:685px;
     background-color:gray;
   }
 

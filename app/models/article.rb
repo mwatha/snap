@@ -1,7 +1,5 @@
 class Article < ActiveRecord::Base
 
-  set_table_name "articles"
-
   named_scope :active, :conditions => ['voided = 0']
     
   def self.last_update_time

@@ -1,7 +1,19 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-# one:
-#   column: value
-#
-# two:
-#   column: value
+admin: 
+  user_id: 1
+  salt: 5bUMM60WAI
+  password: b71d3d6c6a83b7086c931e199be9d8742d14f660 #iceeman
+  date_created: 2009-07-15 15:01:53 +02:00
+  date_changed: 2007-07-15 15:01:53 +02:00
+  date_voided: 
+  voided: false
+  void_reason: 
+  creator: 1
+  changed_by: 1
+  secret_question: 
+  secret_answer: 
+  username: admin
+  system_id: Snap Admin
+  voided_by: 
+  first_name: admin
+  middle_name: 
+  last_name: 
