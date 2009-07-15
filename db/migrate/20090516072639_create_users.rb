@@ -23,7 +23,7 @@ CREATE TABLE `users` (
   `date_changed` Datetime NOT NULL,
   `voided` tinyint(1) default NULL,
   `voided_by` int(11) default NULL,
-  `date_voided` Datetime NOT NULL,
+  `date_voided` Datetime NULL,
   `void_reason` varchar(255) default NULL,
   PRIMARY KEY  (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 
     self.creator = User.current_user.user_id if self.attributes.has_key?("creator") && User.current_user
     self.date_created = Time.now if self.attributes.has_key?("date_created")
+    self.date_changed = Time.now 
 
   end
   

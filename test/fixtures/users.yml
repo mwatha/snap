@@ -1,7 +1,7 @@
 admin: 
   user_id: 1
-  salt: 5bUMM60WAI
-  password: b71d3d6c6a83b7086c931e199be9d8742d14f660 #iceeman
+  salt: DtVxvDXN3y
+  password: e862348de318e1e9969cdbda58bf1580b72297cc #letmein
   date_created: 2009-07-15 15:01:53 +02:00
   date_changed: 2007-07-15 15:01:53 +02:00
   date_voided: 
@@ -14,6 +14,6 @@ admin:
   username: admin
   system_id: Snap Admin
   voided_by: 
-  first_name: admin
+  first_name: snap
   middle_name: 
-  last_name: 
+  last_name: snap
