@@ -27,7 +27,7 @@ cattr_accessor :current_album
 =end
 
    #TODO
-   thumb_image = Album.find(:first,:conditions => ["album=?",album_name])
+   thumb_image = Album.active.find(:first,:conditions => ["album=? and file_name like ?",album_name,"%thumb%"])
    #__________________
 
     File.open("#{RAILS_ROOT}/public/images/uploads/#{album_name}/#{file_name}","w+") do |f|
@@ -52,6 +52,10 @@ cattr_accessor :current_album
       thumb.file_name = "thumb#{image_file_extension}"
       thumb.save 
     end
+#the following code is removing uploaded tmp files
+    Dir.glob(File.join(RAILS_ROOT, 'public/images/tmp', '*')).each{|file|
+      File.delete(file)    
+    }
   end
   
   def image_size(file_path)
@@ -155,8 +159,8 @@ cattr_accessor :current_album
     Album.active.find(:first,:conditions => ["album=?",self.album],:order => "date_created desc").date_updated rescue nil
   end
   
-  def self.void(album_name)  
-     self.get_by_name(album_name).each{|pic|
+  def self.void!(album_name)  
+     self.active.find(:all,:conditions =>["album =?",album_name]).each{|pic|
             pic.voided = true
             pic.save
           } rescue nil

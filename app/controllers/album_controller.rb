@@ -55,7 +55,7 @@ class AlbumController < ApplicationController
   end
   
   def delete
-    Album.void(params[:id])
+    Album.void!(params[:id])
     redirect_to (:action => "show")
   end  
 
