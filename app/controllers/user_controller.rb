@@ -26,7 +26,7 @@ class UserController < ApplicationController
   
   def logout
     reset_session
-    redirect_to(:controller => "article" ,:action => "index" ,:id => "")
+    redirect_to(:controller => "articles" ,:action => "index" ,:id => "")
   end
 
   def signup

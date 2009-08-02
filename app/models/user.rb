@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  require 'digest/sha1'
   cattr_accessor :current_user
 
   set_table_name "users"
