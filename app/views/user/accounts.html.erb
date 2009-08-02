@@ -21,7 +21,7 @@
   <div id="data_div">
     <div align="left" id="left">
     <table>
-    <tr><td><%= link_to 'Home',:controller =>'article' ,:action =>'index'%></td></tr>
+    <tr><td><%= link_to 'Home',:controller =>'articles' ,:action =>'index'%></td></tr>
     <tr><td><%= link_to_remote( "Create user",:update => "center",:url =>{ :action => :forms,:id => 'new_user' }) %></td></tr>
     <tr><td><%= link_to_remote( "Edit user",:update => "center",:url =>{ :action => :forms,:id => 'edit_user' }) %></td></tr>
     <tr><td><%= link_to_remote( "New article",:update => "center",:url =>{ :action => :forms,:id => 'new_article' }) %></td></tr>
