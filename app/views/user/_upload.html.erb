@@ -6,7 +6,7 @@
 </style>
 <div id='new_user'>
 <u><b>New user</b></u></br>
-<% form_tag({:controller =>'album',:action => 'upload'}, {:multipart => true}) do %>
+<% form_tag({:controller =>'albums',:action => 'upload'}, {:multipart => true}) do %>
 <table class="form_table">
 <tr><td>Album name:<%= text_field 'album_name',nil %></td><tr>
 <tr><td><%= file_field 'file_name', 'image' %></td><tr>

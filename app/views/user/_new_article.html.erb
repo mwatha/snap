@@ -12,7 +12,7 @@
 </style>
 <div id='new_article'>
 <u><b>New article</b></u></br>
-<% form_tag :controller =>"article" ,:action => "new" do %>
+<% form_tag :controller =>"articles" ,:action => "new" do %>
 <table class="form_table">
 <tr><td>Title:</td><td><%= text_field 'title',nil %></td><tr>
 <tr><td>Link title:</td><td><%= text_field 'link_title',nil %></td><tr>
