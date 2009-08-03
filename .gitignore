@@ -1,6 +1,6 @@
 config/database.yml
 log/
-public/images/uploads/*
-public/images/tmp/*
+public/images/uploads/ *
+public/images/tmp/ *
 db/schema.rb
 
