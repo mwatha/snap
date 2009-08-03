@@ -74,14 +74,14 @@
     
       <div id='folder'>
         <% @albums.each{|album|%>
-        <diV class="image_container"><div class="images"><%= link_to image_tag("/images/uploads/#{album.album}/#{album.file_name}",:class =>"image_code1") ,:controller =>"album",:action =>"pictures",:id => album.album %></div>
+        <diV class="image_container"><div class="images"><%= link_to image_tag("/images/uploads/#{album.album}/#{album.file_name}",:class =>"image_code1") ,:controller =>"albums",:action =>"pictures",:id => album.album %></div>
           <div class="info">
            <h2 style="font-size:12px;"><%=link_to "#{album.album}",:controller =>"albums",:action =>"pictures",:id => album. album %></h2>
            <span class="count"><%= "#{album.length} photo(s)" rescue 2 %></span></br>
            <span class="count">Created: <%= album.created_date.strftime("%B %d, %Y") rescue nil %></span></br>
            <span class="count">Updated: <%= album.updated_date.strftime("%B %d, %Y") rescue nil %></span></br>
            <% if @user %> 
-             <span class="count"><%= link_to "Edit album | ",:controller =>"user",:action => "accounts" %>&nbsp;<%= link_to "Delete album",:controller =>"album",:action => "delete", :id => album.album %></span></br>
+             <span class="count"><%= link_to "Edit album | ",:controller =>"user",:action => "accounts" %>&nbsp;<%= link_to "Delete album",:controller =>"albums",:action => "delete", :id => album.album %></span></br>
            <% end %>
           </div>
         </div>
