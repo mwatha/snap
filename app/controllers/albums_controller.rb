@@ -4,12 +4,10 @@ class AlbumsController < ApplicationController
     @user = User.find(session[:user_id]) rescue nil
     @articles = Article.get_articles
     @albums = Album.get_albums
-    #redirect_to(:controller =>"home",:action => "index") if @article.blank?
   end
   
   def upload
     file = params[:file_name]
-    #render :text =>  params[:album_name] and return
     Album.current_album = params[:album_name].to_s
 
     new_image = Album.new(params[:file_name]) unless params[:file_name].blank?
@@ -34,9 +32,9 @@ class AlbumsController < ApplicationController
     current_image = params[:image_id]
     album_name = params[:image_name]
     album = Album.get_by_name(album_name)
-    redirect_to (:controller => "album",:action => "show") if album.blank?
+    redirect_to (:controller => "albums",:action => "show") if album.blank?
     next_image_hash = Album.next_image(current_image.to_s,album_name.to_s,album) rescue nil
-    redirect_to (:controller => "album",:action => "show") if next_image_hash.blank?
+    redirect_to (:controller => "albums",:action => "show") if next_image_hash.blank?
     @next_image = next_image_hash.values.first
     @image_count = "Photo #{next_image_hash.keys[0]} of #{album.length}"
     render :partial => "image" and return
@@ -46,9 +44,9 @@ class AlbumsController < ApplicationController
     current_image = params[:image_id]
     album_name = params[:image_name]
     album = Album.get_by_name(album_name)
-    redirect_to (:controller => "album",:action => "show") if album.blank?
+    redirect_to (:controller => "albums",:action => "show") if album.blank?
     next_image_hash = Album.previous_image(current_image.to_s,album_name.to_s,album) rescue nil
-    redirect_to (:controller => "album",:action => "show") if next_image_hash.blank?
+    redirect_to (:controller => "albums",:action => "show") if next_image_hash.blank?
     @next_image = next_image_hash.values.first
     @image_count = "Photo #{next_image_hash.keys[0]} of #{album.length}"
     render :partial => "image" and return
