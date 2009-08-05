@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       User.current_user = User.find(session[:user_id]) unless session[:user_id].nil?
     end
     if session[:user_id].blank?
-      redirect_to(:controller => "user", :action => "login")
+      redirect_to(:controller => "articles", :action => "index")
     end 
   end
   # Scrub sensitive parameters from your log
