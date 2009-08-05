@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
     new_image = Album.new(params[:file_name3]) unless params[:file_name3].blank?
     new_image = Album.new(params[:file_name4]) unless params[:file_name4].blank?
 
-    redirect_to (:controller => "user",:action => "accounts",:id => "upload")
+    redirect_to (:action => "show")
   end
 
   def pictures

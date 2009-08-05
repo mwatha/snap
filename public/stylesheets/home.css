@@ -158,10 +158,11 @@
 
   #about{
     BORDER-RIGHT: black 1px solid;
+    /*
     PADDING-RIGHT: 2px;
-    PADDING-LEFT: 2px;
-    FONT-WEIGHT: bolder;
     PADDING-BOTTOM: 2px;
+    PADDING-LEFT: 2px;*/
+    FONT-WEIGHT: bolder;
     MARGIN: 2px 10% 0px;
     TEXT-TRANSFORM: none;
     BORDER-LEFT: black 1px solid;

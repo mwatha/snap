@@ -38,10 +38,10 @@
     position:relative;
     text-align:center;
     display:block;
-    height:548px;
+    height:auto;
   }
 
-  #data_div {height:650px;}
+  #data_div {height:auto;}
 
   #photoborder img 
   {
