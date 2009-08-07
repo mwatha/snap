@@ -7,24 +7,17 @@ named_scope :active, :conditions => ['voided = 0']
 cattr_accessor :current_album
 
   def image=(file)
+
+    Dir::mkdir("#{RAILS_ROOT}/public/images/uploads/uploads") unless FileTest::directory?("#{RAILS_ROOT}/public/images/uploads")
+    Dir::mkdir("#{RAILS_ROOT}/public/images/uploads/tmp") unless FileTest::directory?("#{RAILS_ROOT}/public/images/tmp")
+
     product_image_title =  file.original_filename
     image_file_extension = product_image_title[product_image_title.rindex(".") .. product_image_title.length].strip.chomp
     file_name = "#{Date.today.strftime('%d%m%y')}#{rand(10000)}#{image_file_extension}"
 
     album_name = self.current_album
 
-    #FileUtils.mkdir_p "public/images/uploads/#{album_name}" if !FileTest::directory?("public/images/uploads/#{album_name}")
     Dir::mkdir("#{RAILS_ROOT}/public/images/uploads/#{album_name}") unless FileTest::directory?("#{RAILS_ROOT}/public/images/uploads/#{album_name}")
-=begin
-    if File.exist?("#{RAILS_ROOT}/public/images/uploads/#{album_name}/#{file_extension}")  
-      valid_file_extension = file_extension
-      count = 1
-      while File.exist?("#{RAILS_ROOT}/public/images/uploads/#{album_name}/#{valid_file_extension}")
-        valid_file_extension = valid_file_extension.split(".")[0..-2].to_s +  "#{count+=1}." + valid_file_extension.split(".")[-1..-1].to_s
-      end  
-      file_extension = valid_file_extension
-    end
-=end
 
    #TODO
    thumb_image = Album.active.find(:first,:conditions => ["album=? and file_name like ?",album_name,"%thumb%"])
