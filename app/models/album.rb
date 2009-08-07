@@ -8,8 +8,8 @@ cattr_accessor :current_album
 
   def image=(file)
 
-    Dir::mkdir("#{RAILS_ROOT}/public/images/uploads/uploads") unless FileTest::directory?("#{RAILS_ROOT}/public/images/uploads")
-    Dir::mkdir("#{RAILS_ROOT}/public/images/uploads/tmp") unless FileTest::directory?("#{RAILS_ROOT}/public/images/tmp")
+    Dir::mkdir("#{RAILS_ROOT}/public/images/uploads") unless FileTest::directory?("#{RAILS_ROOT}/public/images/uploads")
+    Dir::mkdir("#{RAILS_ROOT}/public/images/tmp") unless FileTest::directory?("#{RAILS_ROOT}/public/images/tmp")
 
     product_image_title =  file.original_filename
     image_file_extension = product_image_title[product_image_title.rindex(".") .. product_image_title.length].strip.chomp
