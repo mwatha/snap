@@ -13,7 +13,7 @@
     <table>
     <tr><td><%= link_to 'Home' ,:controller =>'articles' ,:action =>'index' ,:id => ""%></td></tr>
     <% @articles.each{|article| %>
-      <tr><td><%= link_to article.link_title,:controller =>'articles' ,:action =>'index',:id => article.id %></td></tr>
+      <tr><td><%= link_to article.link_title.humanize,:controller =>'articles' ,:action =>'index',:id => article.id %></td></tr>
     <%}%>
     <tr><td><%= link_to 'G&A in pictures',:controller=>'albums' ,:action=>'show'%></td></tr>
     </table>
@@ -30,7 +30,7 @@
   <table id="footer">
     <tr><td>
       <p align="center" style="margin-top: 2px; margin-bottom: 2px;">
-      <font face="Arial" color="" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :g.a.studio@liberty.mw<%='&nbsp;'*3%>g.a@yahoo.com</font>
+      <font face="Arial" color="" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :ga_@yahoo.ca</font>
       </p>
     </td></tr>
   </table>
