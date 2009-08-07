@@ -30,5 +30,17 @@ class Article < ActiveRecord::Base
     self.active.find(:all,:conditions =>["page_number=1"] ,:order => "date_created desc limit 30") 
   end
 
+  def self.edit!(article,title,link_title,content)
+     unless article.blank?
+      article.title = title unless title.blank?
+      article.link_title = link_title unless link_title.blank?
+      article.content = content unless content.blank?
+      voided = article.voided
+      article.date_voided = "0000-00-00 00:00:00" if voided
+      article.voided_by = nil if voided
+      article.voided = 0 if voided
+      article.save
+    end
+  end 
 
 end

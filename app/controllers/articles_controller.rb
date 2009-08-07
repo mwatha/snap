@@ -22,12 +22,7 @@ class ArticlesController < ApplicationController
     title = params[:new_title].to_s.strip rescue nil
     link_title = params[:new_link_title].to_s.strip rescue nil
     content = params[:content].to_s.strip rescue nil
-    if article
-      article.title = title unless title.blank?
-      article.link_title = link_title unless link_title.blank?
-      article.content = content unless content.blank?
-      article.save
-    end
+    Article.edit!(article,title,link_title,content) if article
     redirect_to :controller => "user",:action => 'accounts' and return
   end
 
