@@ -1,0 +1,58 @@
+body,
+ html {
+  margin:0;
+  padding:0;
+  color:#000;
+  background:#EEEEEE;
+}
+
+
+#wrap {
+ width:1000px;
+ margin:0 auto;
+}
+
+#header {
+ /* background:DarkSlateGray; */
+ background-color:buttonshadow;
+ font-size:30px;
+}
+
+#main {
+ float:left;
+ width:500px;
+}
+
+#sidebar {
+  float:right;
+  width:250px;
+}
+
+#footer {
+  clear:both;
+  color:white;
+}
+
+
+#sidebar {
+  float:right;
+  width:250px;
+  font-size:12px;
+  line-height:1.5em;
+}
+
+#nav ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  text-align:right;
+  font-size:12px;
+}
+
+#nav li {
+  display:inline;
+  margin:0;
+  padding:0;
+}
+
+

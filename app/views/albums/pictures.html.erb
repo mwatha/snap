@@ -1,8 +1,8 @@
-<html>
-<head>
- <%= javascript_include_tag "prototype" %>
- <%= stylesheet_link_tag "home" %>
+ <%= stylesheet_link_tag "article" %>
+ <%= stylesheet_link_tag "articles" %>
  <%= stylesheet_link_tag "pictures" %>
+ <%= javascript_include_tag "prototype" %>
+
 <script>
    
   function getPicture(url,album_name){
@@ -24,39 +24,47 @@
   
 
 </script>
-<title>G&A international</title>
-</head>
-<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" id="page_body">
-  <div id="title"></div></div>
-  <div id="login"><%= "Login as " + @user.username + " |" unless @user.blank? %><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %><%= link_to "Login |",:controller =>"user",:action=>"login" if @user.blank?%> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless  @user.blank?%></div>
-  <div id="data_div">
-    <div align="left" id="left">
+
+
+
+<div id="wrap">
+  <div id="header"><font color="red">G<font color="blue">&</font>A</font> INTERNATIONAL</div>
+  <div id="nav">
+    <ul>
+      <li><%= "Login as " + @user.username + " |" unless @user.blank? %></li>
+      <li><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %></li>
+      <li><%= link_to "Login",:controller =>"user",:action=>"login" if @user.blank? %></li>
+      <li> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless @user.blank?%></li>
+    </ul>
+  </div>
+  <div id="main">
     <table>
-    <tr><td><%= link_to 'Home',:controller=>'articles' ,:action=>'index' ,:id => ""%></td></tr>
+    <tr><td><%= link_to 'Home' ,:controller =>'articles' ,:action =>'index' ,:id => ""%></td></tr>
     <% @articles.each{|article| %>
-      <tr><td><%= link_to article.link_title.humanize,:controller=>'articles' ,:action=>'index',:id => article.id %></td></tr>
+      <tr><td><%= link_to article.link_title.humanize,:controller =>'articles' ,:action =>'index',:id => article.id %></td></tr>
     <%}%>
     <tr><td><%= link_to 'G&A in pictures',:controller=>'albums' ,:action=>'show'%></td></tr>
     </table>
-    </div>
-    <div id="center">
-    <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
-     
-    <div id="single_photo_header">
+  </div>
+
+  <div id="sidebar">
+     <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
+
+
+      <div id="single_photo_header">
     <h4><%= @album[0].album rescue ''%></h4>
     <div id="photo_count"><%= @image_count %></div>
-    <div id='pagerpro_container'><%= link_to_function( "Previous",:onclick => "getPicture('previous_picture','#{@album[0].album}');") %>&nbsp; | &nbsp;<%=  link_to_function( "Next",:onclick => "getPicture('next_picture','#{@album[0].album}');") %></div>
+    <div id='pagerpro_container'><%= link_to_function( "Previous",:onclick => "getPicture('previous_picture','#{@album[0].album}');") %>&nbsp; | &nbsp;<%=   link_to_function( "Next",:onclick => "getPicture('next_picture','#{@album[0].album}');") %></div>
     </div>
     <div id='photoborder'>
        <%= render :partial => "image" %>
     </div>
-         
-    </div>
+
+
   </div>
-  <div id="about">
-    <font face="Arial" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :ga_@yahoo.ca</font>
-  </table>
+
+  <div id="footer">
+    <p><font face="Arial" style="font-size: 8pt;">©<%= Time.now.strftime("%Y")%> - email :studios_ga@yahoo.ca</font></p>
   </div>
-</body>
-</html>
+</div>
 

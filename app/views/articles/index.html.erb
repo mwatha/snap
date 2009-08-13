@@ -1,15 +1,16 @@
-<html>
-<head>
- <%= stylesheet_link_tag "home" %>
-<style>
-</style>
-<title>G&A international</title>
-</head>
-<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" id="page_body">
-  <div id="title"></div></div>
-  <div id="login"><%= "Login as " + @user.username + " |" unless @user.blank? %><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %><%= link_to "Login |",:controller =>"user",:action=>"login" if @user.blank?%> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless  @user.blank?%></div>
-  <div id="data_div">
-    <div align="left" id="left">
+ <%= stylesheet_link_tag "article" %>
+ <%= stylesheet_link_tag "articles" %>
+<div id="wrap">
+  <div id="header"><font color="red">G<font color="blue">&</font>A</font> INTERNATIONAL</div>
+  <div id="nav">
+    <ul>
+      <li><%= "Login as " + @user.username + " |" unless @user.blank? %></li>
+      <li><%= link_to "Setting |",:controller =>"user",:action=>"accounts" unless @user.blank?  %></li>
+      <li><%= link_to "Login",:controller =>"user",:action=>"login" if @user.blank? %></li>
+      <li> <%= link_to "Logout",:controller =>"user",:action=>"logout" unless @user.blank?%></li>
+    </ul>
+  </div>
+  <div id="main">
     <table>
     <tr><td><%= link_to 'Home' ,:controller =>'articles' ,:action =>'index' ,:id => ""%></td></tr>
     <% @articles.each{|article| %>
@@ -17,18 +18,18 @@
     <%}%>
     <tr><td><%= link_to 'G&A in pictures',:controller=>'albums' ,:action=>'show'%></td></tr>
     </table>
-    </div>
-    <div id="center">
-    <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
-         <% unless @article.blank? %>
-           <div id="article_title"><%=@article.title%></div>
-           <%= @article.content %>
-         <%end%>  
-    </div>
   </div>
-  <div id="about">
-      <font face="Arial" style="font-size: 8pt;">© <%= Time.now.strftime("%Y")%> - email :ga_@yahoo.ca</font>
+
+  <div id="sidebar">
+     <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
+      <p id="title"><%=@article.title%></p>
+      <% unless @article.blank? %>
+       <%= @article.content %>
+     <%end%>
   </div>
-</body>
-</html>
+
+  <div id="footer">
+    <p><font face="Arial" style="font-size: 8pt;">©<%= Time.now.strftime("%Y")%> - email :studios_ga@yahoo.ca</font></p>
+  </div>
+</div>
 
