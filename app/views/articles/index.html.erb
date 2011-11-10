@@ -21,8 +21,8 @@
   </div>
 
   <div id="sidebar">
-     <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y")%></div>
-      <p id="title"><%=@article.title%></p>
+     <div id="page_update">Site last updated at: <%= Article.last_update_time.strftime("%H:%M CAT,%A,%d-%b-%Y") rescue nil%></div>
+      <p id="title"><%=@article.title rescue nil%></p>
       <% unless @article.blank? %>
        <%= @article.content %>
      <%end%>
